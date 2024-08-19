@@ -89,4 +89,21 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function toggleRead(bookToToggle) {
         books = books.map(book => {
-            if (book === bookToToggle) book.read
+            if (book === bookToToggle) book.read = !book.read;
+            return book;
+        });
+        localStorage.setItem('books', JSON.stringify(books));
+        booksContainer.innerHTML = '';
+        books.forEach(book => addBookToDOM(book));
+    }
+    
+    function addToWishlist(bookToAdd) {
+        wishlistBooks.push(bookToAdd);
+        localStorage.setItem('wishlistBooks', JSON.stringify(wishlistBooks));
+        wishlistContainer.innerHTML = '';
+        wishlistBooks.forEach(book => addBookToDOM(book, true));
+    }
+    
+    books.forEach(book => addBookToDOM(book));
+    wishlistBooks.forEach(book => addBookToDOM(book, true));
+});
