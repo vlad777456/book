@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Віртуальна Книжкова Полиця</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Моя Віртуальна Книжкова Полиця</h1>
+        <nav>
+            <a href="#" id="all-books-tab">Усі книги</a>
+            <a href="#" id="wishlist-tab">Список бажань</a>
+            <a href="#" id="add-book-tab">Додати книгу</a>
+        </nav>
+    </header>
+    
+    <section id="main-content">
+        <div id="book-list" class="active-tab">
+            <h2>Усі книги</h2>
+            <div id="books"></div>
+        </div>
+        
+        <div id="wishlist" class="tab-content">
+            <h2>Список бажань</h2>
+            <div id="wishlist-books"></div>
+        </div>
+        
+        <div id="add-book" class="tab-content">
+            <h2>Додати нову книгу</h2>
+            <form id="book-form">
+                <input type="text" id="book-title" placeholder="Назва книги" required>
+                <input type="text" id="book-author" placeholder="Автор книги" required>
+                <input type="url" id="book-cover" placeholder="Посилання на обкладинку" required>
+                <textarea id="book-notes" placeholder="Ваші нотатки"></textarea>
+                <button type="submit">Додати книгу</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 Віртуальна Книжкова Полиця. Всі права захищені.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
